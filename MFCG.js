@@ -20,6 +20,7 @@ const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("#reset")
 const scoreEl = document.querySelector("#score")
 
+
 ////////////////////////////////
 // Functions For Game Logic Here
 const init = () => {
@@ -27,6 +28,9 @@ const init = () => {
   tries = 3
   checkClicks = []
   render()
+  cardEls.forEach((image)=>{
+    image.src="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
+  })
 }
 
 const render = () => {
@@ -62,34 +66,41 @@ const matchCard = (firstClick, secondClick) => {
   console.log("firstClick", firstClick, cards[firstClick])
   console.log("secondClick", secondClick, cards[secondClick])
 
-  checkClicks = [firstClick, secondClick] 
+  checkClicks = [firstClick, secondClick]
   if (cards[firstClick] === cards[secondClick]) {
     score++
     updateMessage()
     newClick()
     console.log("matchCard")
-    reset(firstClick, secondClick)
-  }
+    // reset(firstClick, secondClick)
+
   console.log(tries)
 
   if (score === 4) {
     messageEl.textContent = "You Win :)"
-  } else if (tries <= 1) {
+
+  }
+}
+else  {
     console.log(tries)
     tries--
     updateMessage()
     newClick()
     console.log("ifAndElse")
     reset(firstClick, secondClick)
-  } else {
-    tries = 0
+
+  if (tries===0) {
     updateMessage()
     messageEl.textContent = "You lose !"
+
   }
-}
+}}
 
 cardEls.forEach((singleCard, index) => {
   singleCard.addEventListener("click", () => {
+ if(score===4 || tries===0){
+    return
+ }
     singleCard.src = cards[index]
 
     checkClicks.push(index)
