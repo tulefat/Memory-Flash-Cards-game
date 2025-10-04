@@ -13,7 +13,7 @@ let cards = [
   "https://i.pinimg.com/736x/33/48/e9/3348e9ba08a47c18d41203174152d1ea.jpg",
 ]
 let score = 0
-let tries = 3
+let tries = 5
 let checkClicks = []
 const cardEls = document.querySelectorAll(".card img")
 const messageEl = document.querySelector("#message")
@@ -25,7 +25,7 @@ const scoreEl = document.querySelector("#score")
 // Functions For Game Logic Here
 const init = () => {
   score = 0
-  tries = 3
+  tries = 5
   checkClicks = []
   render()
   cardEls.forEach((image)=>{
@@ -87,7 +87,9 @@ else  {
     updateMessage()
     newClick()
     console.log("ifAndElse")
-    reset(firstClick, secondClick)
+
+    setTimeout(()=>reset(firstClick, secondClick),500)
+    // https://www.w3schools.com/jsref/met_win_settimeout.asp
 
   if (tries===0) {
     updateMessage()
