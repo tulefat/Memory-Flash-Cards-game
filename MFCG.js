@@ -71,7 +71,7 @@ const matchCard = (firstClick, secondClick) => {
     score++
     updateMessage()
     newClick()
-    console.log("matchCard")
+    // console.log("matchCard")
     // reset(firstClick, secondClick)
 
   console.log(tries)
@@ -86,7 +86,7 @@ else  {
     tries--
     updateMessage()
     newClick()
-    console.log("ifAndElse")
+    // console.log("ifAndElse")
 
     setTimeout(()=>reset(firstClick, secondClick),500)
     // https://www.w3schools.com/jsref/met_win_settimeout.asp
@@ -103,17 +103,18 @@ cardEls.forEach((singleCard, index) => {
  if(score===4 || tries===0){
     return
  }
-    singleCard.src = cards[index]
+  else {singleCard.src = cards[index]
 
     checkClicks.push(index)
     if (checkClicks.length === 2) {
       matchCard(checkClicks[0], checkClicks[1])
+    }
     }
   })
 })
 
 resetBtnEl.addEventListener("click", () => {
   init()
-  console.log(resetBtnEl)
+  // console.log(resetBtnEl)
 })
 init()
