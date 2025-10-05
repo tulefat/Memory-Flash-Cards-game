@@ -103,6 +103,7 @@ cardEls.forEach((singleCard, index) => {
  if(score===4 || tries===0){
     return
  }
+ if (cardEls[index].src !=="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"){return}
   else {singleCard.src = cards[index]
 
     checkClicks.push(index)
