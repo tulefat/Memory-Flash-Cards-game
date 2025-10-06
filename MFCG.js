@@ -14,11 +14,12 @@ let cards = [
 ]
 let score = 0
 let tries = 5
+let allowClick = true
 let checkClicks = []
 const cardEls = document.querySelectorAll(".card img")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("#reset")
-const scoreEl = document.querySelector("#score")
+// const scoreEl = document.querySelector("#score")
 
 
 ////////////////////////////////
@@ -27,6 +28,7 @@ const init = () => {
   score = 0
   tries = 5
   checkClicks = []
+  allowClick = true
   render()
   cardEls.forEach((image)=>{
     image.src="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
@@ -47,11 +49,12 @@ const updatecards = () => {
   })
 }
 const updateMessage = () => {
-  messageEl.textContent = `score: ${score} tries: ${tries}`
+  messageEl.textContent = `Score ${score} |  Tries ${tries}`
 }
 
 const newClick = () => {
   checkClicks = []
+  allowClick = true
 }
 
 const reset = (firstClick, secondClick) => {
@@ -66,18 +69,20 @@ const matchCard = (firstClick, secondClick) => {
   console.log("firstClick", firstClick, cards[firstClick])
   console.log("secondClick", secondClick, cards[secondClick])
 
-  checkClicks = [firstClick, secondClick]
+  // checkClicks = [firstClick, secondClick]
   if (cards[firstClick] === cards[secondClick]) {
     score++
     updateMessage()
     newClick()
+
+
     // console.log("matchCard")
     // reset(firstClick, secondClick)
-
   console.log(tries)
 
   if (score === 4) {
-    messageEl.textContent = "You Win :)"
+    messageEl.textContent = "Congratulations you Win :)"
+
 
   }
 }
@@ -85,14 +90,21 @@ else  {
     console.log(tries)
     tries--
     updateMessage()
-    newClick()
+
+
+
     // console.log("ifAndElse")
 
-    setTimeout(()=>reset(firstClick, secondClick),500)
+    setTimeout(()=>{reset(firstClick, secondClick),newClick()},1500)
+
+
     // https://www.w3schools.com/jsref/met_win_settimeout.asp
+
 
   if (tries===0) {
     updateMessage()
+
+
     messageEl.textContent = "You lose !"
 
   }
@@ -100,7 +112,8 @@ else  {
 
 cardEls.forEach((singleCard, index) => {
   singleCard.addEventListener("click", () => {
- if(score===4 || tries===0){
+    if (allowClick===false){return}
+    if(score===4 || tries===0){
     return
  }
  if (cardEls[index].src !=="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"){return}
@@ -108,12 +121,13 @@ cardEls.forEach((singleCard, index) => {
 
     checkClicks.push(index)
     if (checkClicks.length === 2) {
+      allowClick = false;
       matchCard(checkClicks[0], checkClicks[1])
+
     }
     }
   })
 })
-
 resetBtnEl.addEventListener("click", () => {
   init()
   // console.log(resetBtnEl)
