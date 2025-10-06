@@ -7,7 +7,7 @@
 ***
 
 ### ***Description***
-#### This is a memory card matching game played on a 3x3 grid. Players click a card to flip it, then select a second card to reveal its image. If the images do not match, both cards flip back. If they match, the cards remain face-up, the player earns a point, and the game continues until all pairs are matched. The objective is to achieve a score of 4. However, if the player makes two mistakes, the game ends in a loss.
+#### This is a memory card matching game played on a 3x3 grid. Players click a card to flip it, then select a second card to reveal its image. If the images do not match, both cards flip back. If they match, the cards remain face-up, the player earns a point, and the game continues until all pairs are matched. The objective is to achieve a score of 4. However, if the player makes five mistakes, the game ends in a loss.
 
 ***
 
