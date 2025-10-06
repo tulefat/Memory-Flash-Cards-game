@@ -14,7 +14,7 @@ let cards = [
 ]
 let score = 0
 let tries = 5
-// let allowClick = true
+let allowClick = true
 let checkClicks = []
 const cardEls = document.querySelectorAll(".card img")
 const messageEl = document.querySelector("#message")
@@ -29,7 +29,7 @@ const init = () => {
   score = 0
   tries = 5
   checkClicks = []
-  allowClick = true
+  // allowClick = true
   render()
   cardEls.forEach((image)=>{
     image.src="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
@@ -83,7 +83,7 @@ const matchCard = (firstClick, secondClick) => {
   }
 }
 else  {
-    console.log(tries)
+    // console.log(tries)
     tries--
     updateMessage()
     // console.log("ifAndElse")
