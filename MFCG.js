@@ -10,6 +10,7 @@ let cards = [
   "https://i.pinimg.com/736x/d0/49/9f/d0499f16a0bb36301c2dc92e38834932.jpg",
   "https://i.pinimg.com/736x/33/48/e9/3348e9ba08a47c18d41203174152d1ea.jpg",
 ]
+const backCard = "https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
 let score = 0
 let tries = 5
 let allowClick = true
@@ -25,7 +26,7 @@ const init = () => {
   checkClicks = []
   render()
   cardEls.forEach((image)=>{
-    image.src="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
+    image.src=backCard
   })}
 
 const render = () => {
@@ -53,9 +54,9 @@ const newClick = () => {
 const reset = (firstClick, secondClick) => {
 
   cardEls[firstClick].src =
-    "https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
+    backCard
   cardEls[secondClick].src =
-    "https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
+    backCard
 }
 
 const matchCard = (firstClick, secondClick) => {
@@ -79,7 +80,7 @@ cardEls.forEach((singleCard, index) => {
   singleCard.addEventListener("click", () => {
     if (allowClick===false){return}
     if(score===4 || tries===0){return}
- if (cardEls[index].src !=="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"){return}
+ if (cardEls[index].src !==backCard){return}
   else {singleCard.src = cards[index]
     checkClicks.push(index)
     if (checkClicks.length === 2) {
