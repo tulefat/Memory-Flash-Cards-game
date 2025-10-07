@@ -1,8 +1,17 @@
 body {
 
   font-family: system-ui, sans-serif;
-  margin: 10;
+  margin: 0;
   text-align: center;
+}
+
+#start{
+padding: 2%;
+margin: 50px auto;
+font-size:20px;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+border: 5px solid grey;
+border-radius: 15px;
 }
 
 .cards {
@@ -48,3 +57,11 @@ margin: auto;
   font-size: 64px;
   text-align: center;
   padding: 25% 7% 7% 7%;
+}
+#reset{
+padding: 1%;
+font-size:15px;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+border: 1px solid grey;
+border-radius: 15px;
+}
