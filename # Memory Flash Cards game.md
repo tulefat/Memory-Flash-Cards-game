@@ -16,7 +16,7 @@
 ##### In the Home page press start button to start the game.
 ##### The screen will show 3 by 3 total of nine cards
 ##### At the beginning cards are face down.
-##### There are four pairs of identicals cards and one more card is extra.
+##### There are four pairs of identical cards and one more card is extra.
 ***
 
 ### ***Credits***

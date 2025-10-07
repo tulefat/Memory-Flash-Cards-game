@@ -1,6 +1,4 @@
-////////////////////////////////
 // Global Variables Here
-
 let cards = [
   "https://i.pinimg.com/1200x/f8/7d/1f/f87d1fd4c090d46a87590f4a56a80502.jpg",
   "https://i.pinimg.com/1200x/f8/7d/1f/f87d1fd4c090d46a87590f4a56a80502.jpg",
@@ -19,22 +17,16 @@ let checkClicks = []
 const cardEls = document.querySelectorAll(".card img")
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("#reset")
-
-
-
 ////////////////////////////////
 // Functions For Game Logic Here
-
 const init = () => {
   score = 0
   tries = 5
   checkClicks = []
-  // allowClick = true
   render()
   cardEls.forEach((image)=>{
     image.src="https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
-  })
-}
+  })}
 
 const render = () => {
   updatecards()
@@ -47,8 +39,7 @@ const updatecards = () => {
     let oldCard = cards[index]
     cards[index] = cards[random]
     cards[random] = oldCard
-  })
-}
+  })}
 
 const updateMessage = () => {
   messageEl.textContent = `Score ${score} |  Tries ${tries}`
@@ -60,7 +51,7 @@ const newClick = () => {
 }
 
 const reset = (firstClick, secondClick) => {
-  // console.log(firstClick)
+
   cardEls[firstClick].src =
     "https://i.pinimg.com/1200x/b9/5b/69/b95b69dba492dad85f098702c032c615.jpg"
   cardEls[secondClick].src =
@@ -68,32 +59,21 @@ const reset = (firstClick, secondClick) => {
 }
 
 const matchCard = (firstClick, secondClick) => {
-  // console.log("firstClick", firstClick, cards[firstClick])
-  // console.log("secondClick", secondClick, cards[secondClick])
-  // checkClicks = [firstClick, secondClick]
   if (cards[firstClick] === cards[secondClick]) {
     score++
     updateMessage()
     newClick()
-    // console.log("matchCard")
-    // reset(firstClick, secondClick)
-  // console.log(tries)
   if (score === 4) {
     messageEl.textContent = "Congratulations you Win :)"
-  }
-}
+  }}
 else  {
-    // console.log(tries)
     tries--
     updateMessage()
-    // console.log("ifAndElse")
     setTimeout(()=>{reset(firstClick, secondClick),newClick()},1500)
-    // https://www.w3schools.com/jsref/met_win_settimeout.asp
   if (tries===0) {
     updateMessage()
     messageEl.textContent = "You lose !"
-  }
-}}
+  }}}
 
 cardEls.forEach((singleCard, index) => {
   singleCard.addEventListener("click", () => {
@@ -105,12 +85,9 @@ cardEls.forEach((singleCard, index) => {
     if (checkClicks.length === 2) {
       allowClick = false;
       matchCard(checkClicks[0], checkClicks[1])
-    }
-    }
-  })
-})
+    }}})})
+
 resetBtnEl.addEventListener("click", () => {
   init()
-  // console.log(resetBtnEl)
 })
 init()

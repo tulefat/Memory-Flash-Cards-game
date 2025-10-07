@@ -1,5 +1,5 @@
 body {
-  background-color: yellow;
+
   font-family: system-ui, sans-serif;
   margin: 10;
   text-align: center;
@@ -13,12 +13,12 @@ margin: auto;
 }
 
 .card {
-  width: 27%;
+  width: 18%;
   aspect-ratio: 1/1;
   border: 0px solid black;
   font-size: 64px;
   text-align: center;
-  padding: 1%;
+  padding: 2% 6% 0% 8%;
 
 }
 
@@ -26,3 +26,25 @@ img {
   max-width: 100%;
 
 }
+
+html{
+background: url(https://i.pinimg.com/736x/79/b9/f8/79b9f817247b18b60103c7bfcfab911a.jpg);
+height: 100%;
+width: 100%;
+
+}
+
+.cardss {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+margin: auto;
+}
+
+.cardd {
+  width: 18%;
+  aspect-ratio: 1/1;
+  border: 0px solid black;
+  font-size: 64px;
+  text-align: center;
+  padding: 25% 7% 7% 7%;
