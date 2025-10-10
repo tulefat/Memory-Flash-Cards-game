@@ -1,24 +1,24 @@
 body {
-
   font-family: system-ui, sans-serif;
   margin: 0;
   text-align: center;
 }
 
-#start{
-padding: 2%;
-margin: 50px auto;
-font-size:20px;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-border: 5px solid grey;
-border-radius: 15px;
+#start {
+  padding: 2%;
+  margin: 50px auto;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border: 5px solid grey;
+  border-radius: 15px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   width: 500px;
-margin: auto;
+  margin: auto;
 }
 
 .card {
@@ -28,26 +28,23 @@ margin: auto;
   font-size: 64px;
   text-align: center;
   padding: 2% 6% 0% 8%;
-
 }
 
 img {
   max-width: 100%;
-
 }
 
-html{
-background: url(https://i.pinimg.com/736x/79/b9/f8/79b9f817247b18b60103c7bfcfab911a.jpg);
-height: 100%;
-width: 100%;
-
+html {
+  background: url(https://i.pinimg.com/736x/79/b9/f8/79b9f817247b18b60103c7bfcfab911a.jpg);
+  height: 100%;
+  width: 100%;
 }
 
 .cardss {
   display: flex;
   flex-wrap: wrap;
   width: 500px;
-margin: auto;
+  margin: auto;
 }
 
 .cardd {
@@ -58,10 +55,11 @@ margin: auto;
   text-align: center;
   padding: 25% 7% 7% 7%;
 }
-#reset{
-padding: 1%;
-font-size:15px;
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-border: 1px solid grey;
-border-radius: 15px;
+#reset {
+  padding: 1%;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border: 1px solid grey;
+  border-radius: 15px;
 }
